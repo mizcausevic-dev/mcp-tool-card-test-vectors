@@ -1,0 +1,20 @@
+{
+  "tool_card_version": "0.1",
+  "tool": {
+    "server_id": "ops-mcp",
+    "name": "broken-schema",
+    "version": "1.0.0",
+    "mcp_server_uri": "https://example.com/mcp/ops",
+    "description": "schema block exists but has neither input_schema_uri nor input_schema_inline (spec's oneOf requires one)."
+  },
+  "schema": {},
+  "safety": {
+    "side_effect_class": "read",
+    "reversible": true,
+    "rate_limited": false,
+    "pii_exposure": "none",
+    "secrets_exposure": "none",
+    "human_approval_required": false
+  },
+  "audit": { "log_locations": [] }
+}

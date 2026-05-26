@@ -1,0 +1,26 @@
+{
+  "tool_card_version": "0.1",
+  "tool": {
+    "server_id": "ops-mcp",
+    "name": "invalidate-cache-key",
+    "version": "1.0.0",
+    "mcp_server_uri": "https://example.com/mcp/ops",
+    "description": "Invalidate a single cache key (reversible — next read repopulates)."
+  },
+  "schema": {
+    "input_schema_inline": {
+      "type": "object",
+      "properties": { "key": { "type": "string" } },
+      "required": ["key"]
+    }
+  },
+  "safety": {
+    "side_effect_class": "mutating",
+    "reversible": true,
+    "rate_limited": false,
+    "pii_exposure": "none",
+    "secrets_exposure": "none",
+    "human_approval_required": false
+  },
+  "audit": { "log_locations": ["s3://ops-audit/cache/"], "retention_days": 90 }
+}

@@ -1,0 +1,36 @@
+{
+  "tool_card_version": "0.1",
+  "tool": {
+    "server_id": "research-mcp",
+    "name": "deep-rerank",
+    "version": "2.1.0",
+    "mcp_server_uri": "https://example.com/mcp/research",
+    "description": "Cross-encoder rerank step with every optional block populated."
+  },
+  "schema": {
+    "input_schema_uri": "https://example.com/schemas/deep-rerank.json",
+    "output_schema_inline": {
+      "type": "object",
+      "properties": {
+        "results": { "type": "array", "items": { "type": "object" } }
+      }
+    }
+  },
+  "safety": {
+    "side_effect_class": "read",
+    "external_systems": [],
+    "reversible": true,
+    "rate_limited": true,
+    "pii_exposure": "low",
+    "secrets_exposure": "none",
+    "human_approval_required": false,
+    "refusal_modes": ["off-domain-content"]
+  },
+  "tested_with": [
+    { "provider": "openai", "model": "gpt-4o-mini", "passed": true },
+    { "provider": "anthropic", "model": "claude-opus-4-7", "passed": true }
+  ],
+  "performance": { "p50_latency_ms": 180, "p95_latency_ms": 720, "max_concurrency": 16 },
+  "cost": { "pricing_model": "per-call", "per_call_cost_usd": 0.0011, "monthly_budget_usd": 250 },
+  "audit": { "log_locations": ["s3://research-audit/rerank/", "datadog://"], "retention_days": 2555 }
+}
