@@ -43,8 +43,9 @@ for (const v of loadVectors({ category: "dirty" })) {
 - [**`mcp-tool-card-spec`**](https://github.com/mizcausevic-dev/mcp-tool-card-spec) — the schema these vectors conform to (or deliberately violate).
 - [**`mcp-tool-card-generator`**](https://github.com/mizcausevic-dev/mcp-tool-card-generator) — produces Tool Cards from MCP servers.
 - [**`mcp-tool-card-diff`**](https://github.com/mizcausevic-dev/mcp-tool-card-diff) — compares two cards across versions.
-- [**`mcp-tool-card-summary`**](https://github.com/mizcausevic-dev/mcp-tool-card-summary) — analyzes a directory of cards.
 - [**`kg-validate-action`**](https://github.com/mizcausevic-dev/kg-validate-action) — per-doc CI validator.
+
+Historical reference: [**`mcp-tool-card-summary`**](https://github.com/mizcausevic-dev/mcp-tool-card-summary) analyzed a directory of cards. GitHub marked it archived and read-only when checked on 2026-10-30; its source remains available.
 
 ## Develop
 
